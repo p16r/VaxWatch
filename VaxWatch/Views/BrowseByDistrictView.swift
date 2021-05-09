@@ -3,8 +3,11 @@ import SwiftUI
 struct BrowseByDistrictView: View {
 
     var body: some View {
-        Form {
-            Text("Hello, World!")
+        NavigationView {
+            Form {
+                Text("Hello, World!")
+            }
+            .navigationTitle("Browse By Districts")
         }
     }
 
