@@ -24,6 +24,7 @@
 		0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */; };
 		0570BA632647C33100BC1E4D /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA622647C33100BC1E4D /* Publisher+.swift */; };
 		0570BA682647C39200BC1E4D /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA672647C39200BC1E4D /* DateFormatter+.swift */; };
+		0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+.swift"; sourceTree = "<group>"; };
 		0570BA622647C33100BC1E4D /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		0570BA672647C39200BC1E4D /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
+		0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
+				0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */,
 				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
 			);
 			path = Views;
@@ -244,9 +247,9 @@
 				0570BA4D2647BFF300BC1E4D /* Districts.swift in Sources */,
 				0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */,
 				0570BA542647C01B00BC1E4D /* AnyCodingKey.swift in Sources */,
-				0570BA202647B3B200BC1E4D /* ContentView.swift in Sources */,
 				0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */,
 				0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */,
+				0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */,
 				0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */,
 				0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */,
 				0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */,
