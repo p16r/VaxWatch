@@ -14,6 +14,7 @@
 		0570BA2F2647B42200BC1E4D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA2D2647B42200BC1E4D /* LICENSE */; };
 		0570BA302647B42200BC1E4D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA2E2647B42200BC1E4D /* .gitignore */; };
 		0570BA372647B4F900BC1E4D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA362647B4F900BC1E4D /* Colors.xcassets */; };
+		0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA3B2647BC5800BC1E4D /* RootTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0570BA2E2647B42200BC1E4D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0570BA362647B4F900BC1E4D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0570BA392647B55C00BC1E4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0570BA3B2647BC5800BC1E4D /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0570BA1F2647B3B200BC1E4D /* ContentView.swift */,
+				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0570BA202647B3B200BC1E4D /* ContentView.swift in Sources */,
+				0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */,
 				0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
