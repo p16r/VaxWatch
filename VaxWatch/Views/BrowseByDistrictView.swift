@@ -24,6 +24,15 @@ struct BrowseByDistrictView: View {
             }
             .navigationTitle("Browse By Districts")
         }
+        .alert(isPresented: .constant(appModel.errorMessage != nil)) {
+            Alert(
+                title: Text("Error"),
+                message: appModel.errorMessage.map { Text($0) },
+                dismissButton: .cancel(Text("OK")) {
+                    appModel.errorMessage = nil
+                }
+            )
+        }
         .onAppear(perform: appModel.fetchStates)
     }
 
