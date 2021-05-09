@@ -15,6 +15,15 @@
 		0570BA372647B4F900BC1E4D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA362647B4F900BC1E4D /* Colors.xcassets */; };
 		0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA3B2647BC5800BC1E4D /* RootTabView.swift */; };
 		0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */; };
+		0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA432647BFD600BC1E4D /* APIClient.swift */; };
+		0570BA4A2647BFF300BC1E4D /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA462647BFF300BC1E4D /* States.swift */; };
+		0570BA4B2647BFF300BC1E4D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA472647BFF300BC1E4D /* Session.swift */; };
+		0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA482647BFF300BC1E4D /* Center.swift */; };
+		0570BA4D2647BFF300BC1E4D /* Districts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA492647BFF300BC1E4D /* Districts.swift */; };
+		0570BA542647C01B00BC1E4D /* AnyCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA532647C01B00BC1E4D /* AnyCodingKey.swift */; };
+		0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */; };
+		0570BA632647C33100BC1E4D /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA622647C33100BC1E4D /* Publisher+.swift */; };
+		0570BA682647C39200BC1E4D /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA672647C39200BC1E4D /* DateFormatter+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +38,15 @@
 		0570BA392647B55C00BC1E4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0570BA3B2647BC5800BC1E4D /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseByDistrictView.swift; sourceTree = "<group>"; };
+		0570BA432647BFD600BC1E4D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		0570BA462647BFF300BC1E4D /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		0570BA472647BFF300BC1E4D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		0570BA482647BFF300BC1E4D /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
+		0570BA492647BFF300BC1E4D /* Districts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Districts.swift; sourceTree = "<group>"; };
+		0570BA532647C01B00BC1E4D /* AnyCodingKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodingKey.swift; sourceTree = "<group>"; };
+		0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+.swift"; sourceTree = "<group>"; };
+		0570BA622647C33100BC1E4D /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
+		0570BA672647C39200BC1E4D /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,9 @@
 				0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */,
 				0570BA262647B3B400BC1E4D /* Info.plist */,
 				0570BA332647B48C00BC1E4D /* Views */,
+				0570BA4F2647BFFF00BC1E4D /* Models */,
+				0570BA512647C00900BC1E4D /* Networking */,
+				0570BA5E2647C1CF00BC1E4D /* Extensions */,
 				0570BA352647B49100BC1E4D /* Assets */,
 				0570BA232647B3B400BC1E4D /* Preview Content */,
 			);
@@ -97,6 +118,52 @@
 				0570BA362647B4F900BC1E4D /* Colors.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		0570BA4F2647BFFF00BC1E4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0570BA482647BFF300BC1E4D /* Center.swift */,
+				0570BA492647BFF300BC1E4D /* Districts.swift */,
+				0570BA472647BFF300BC1E4D /* Session.swift */,
+				0570BA462647BFF300BC1E4D /* States.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0570BA512647C00900BC1E4D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0570BA532647C01B00BC1E4D /* AnyCodingKey.swift */,
+				0570BA432647BFD600BC1E4D /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0570BA5C2647C1C800BC1E4D /* Foundation+ */ = {
+			isa = PBXGroup;
+			children = (
+				0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */,
+				0570BA672647C39200BC1E4D /* DateFormatter+.swift */,
+			);
+			path = "Foundation+";
+			sourceTree = "<group>";
+		};
+		0570BA5E2647C1CF00BC1E4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0570BA652647C37A00BC1E4D /* Combine+ */,
+				0570BA5C2647C1C800BC1E4D /* Foundation+ */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0570BA652647C37A00BC1E4D /* Combine+ */ = {
+			isa = PBXGroup;
+			children = (
+				0570BA622647C33100BC1E4D /* Publisher+.swift */,
+			);
+			path = "Combine+";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +238,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0570BA682647C39200BC1E4D /* DateFormatter+.swift in Sources */,
+				0570BA632647C33100BC1E4D /* Publisher+.swift in Sources */,
+				0570BA4B2647BFF300BC1E4D /* Session.swift in Sources */,
+				0570BA4D2647BFF300BC1E4D /* Districts.swift in Sources */,
+				0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */,
+				0570BA542647C01B00BC1E4D /* AnyCodingKey.swift in Sources */,
+				0570BA202647B3B200BC1E4D /* ContentView.swift in Sources */,
 				0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */,
 				0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */,
 				0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */,
+				0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */,
+				0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */,
+				0570BA4A2647BFF300BC1E4D /* States.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
