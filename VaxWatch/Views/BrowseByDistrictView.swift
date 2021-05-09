@@ -5,6 +5,7 @@ struct BrowseByDistrictView: View {
     @State var date = Date()
     @StateObject var appModel = DistrictsViewModel()
     @State var selectedStateIndex = 0
+    @State var selectedDistrictIndex = 0
 
     var body: some View {
         NavigationView {
@@ -20,7 +21,23 @@ struct BrowseByDistrictView: View {
                             }
                         }
                     }
+                    if selectedStateIndex != 0 {
+                        if let state = appModel.states[selectedStateIndex], appModel.districts.isEmpty {
+                            Button("Fetch Districts List for \(state)") {
+                                appModel.fetchDistricts(for: selectedStateIndex)
+                            }
+                        } else {
+                            Picker("District", selection: $selectedDistrictIndex) {
+                                ForEach(appModel.districts.sorted { $0.value < $1.value }, id: \.key) { district in
+                                    Text(district.value)
+                                }
+                            }
+                        }
+                    }
                 }
+            }
+            .onChange(of: selectedStateIndex) { index in
+                appModel.fetchDistricts(for: index)
             }
             .navigationTitle("Browse By Districts")
         }
