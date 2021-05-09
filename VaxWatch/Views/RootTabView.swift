@@ -4,7 +4,8 @@ struct RootTabView: View {
 
     var body: some View {
         TabView {
-            ContentView()
+            BrowseByDistrictView()
+                .tabItem { Label("District", systemImage: "map") }
         }
     }
 
