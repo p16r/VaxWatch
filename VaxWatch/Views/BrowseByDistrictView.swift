@@ -59,6 +59,15 @@ struct BrowseByDistrictView: View {
                 }
             )
         }
+        .alert(isPresented: .constant(centersModel.errorMessage != nil)) {
+            Alert(
+                title: Text("Error"),
+                message: centersModel.errorMessage.map { Text($0) },
+                dismissButton: .cancel(Text("OK")) {
+                    centersModel.errorMessage = nil
+                }
+            )
+        }
         .onAppear(perform: appModel.fetchStates)
     }
 
