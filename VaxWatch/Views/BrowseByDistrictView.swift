@@ -4,6 +4,7 @@ struct BrowseByDistrictView: View {
 
     @State var date = Date()
     @StateObject var appModel = DistrictsViewModel()
+    @StateObject var centersModel = CentersViewModel()
     @State var selectedStateIndex = 0
     @State var selectedDistrictIndex = 0
 
@@ -38,6 +39,10 @@ struct BrowseByDistrictView: View {
             }
             .onChange(of: selectedStateIndex) { index in
                 appModel.fetchDistricts(for: index)
+            }
+            .onChange(of: selectedDistrictIndex) { index in
+                if index == 0 { return }
+                centersModel.fetchCentres(for: index, on: date)
             }
             .navigationTitle("Browse By Districts")
         }
