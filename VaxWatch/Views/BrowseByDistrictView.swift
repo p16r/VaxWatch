@@ -37,6 +37,10 @@ struct BrowseByDistrictView: View {
                     }
                 }
             }
+            .onChange(of: date) { date in
+                if selectedDistrictIndex == 0 { return }
+                centersModel.fetchCentres(for: selectedDistrictIndex, on: date)
+            }
             .onChange(of: selectedStateIndex) { index in
                 appModel.fetchDistricts(for: index)
             }
