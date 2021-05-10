@@ -10,6 +10,15 @@ struct CenterDetailView: View {
                 Text(centerViewModel.name)
                 Text(centerViewModel.addressString)
             }
+            let sessions = Dictionary(grouping: centerViewModel.sessions, by: \.date)
+                .sorted { $0.key < $1.key }
+            ForEach(sessions, id: \.key) { sessionGroup in
+                Section(header: Text(sessionGroup.key)) {
+                    ForEach(sessionGroup.value) { session in
+                        Text(String(describing: session))
+                    }
+                }
+            }
         }
         .navigationTitle("Center Details")
         .navigationBarTitleDisplayMode(.inline)
