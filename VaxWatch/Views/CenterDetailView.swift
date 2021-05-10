@@ -15,7 +15,7 @@ struct CenterDetailView: View {
             ForEach(sessions, id: \.key) { sessionGroup in
                 Section(header: Text(sessionGroup.key)) {
                     ForEach(sessionGroup.value) { session in
-                        Text(String(describing: session))
+                        SessionListCell(sessionViewModel: SessionViewModel(session: session))
                     }
                 }
             }
