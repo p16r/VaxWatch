@@ -18,9 +18,9 @@ class CentersViewModel: ObservableObject {
         }
     }
 
-    func fetchCentres(for districtIndex: Int, on date: Date) {
+    func fetchCentres(for districtIndex: Int) {
         apiClient
-            .centersByDistrictPublisher(for: districtIndex, on: date)
+            .centersByDistrictPublisher(for: districtIndex)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in
                 switch result {

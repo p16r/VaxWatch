@@ -32,21 +32,16 @@ struct APIClient {
             .asResult()
     }
 
-    func centersByDistrictPublisher(
-        for districtID: Int,
-        on date: Date
-    ) -> AnyPublisher<Result<[Center], Error>, Never> {
+    func centersByDistrictPublisher(for districtID: Int) -> AnyPublisher<Result<[Center], Error>, Never> {
         let parameters = [
             URLQueryItem(name: "district_id", value: String(describing: districtID)),
-            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
         ]
         return centersPublisher(for: parameters)
     }
 
-    func centersByPincodePublisher(for pincode: Int, on date: Date) -> AnyPublisher<Result<[Center], Error>, Never> {
+    func centersByPincodePublisher(for pincode: Int) -> AnyPublisher<Result<[Center], Error>, Never> {
         let parameters = [
             URLQueryItem(name: "pincode", value: String(describing: pincode)),
-            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
         ]
         return centersPublisher(for: parameters)
     }
@@ -57,7 +52,12 @@ struct APIClient {
             return Fail(error: URLError(.badURL))
                 .asResult()
         }
+
+        var parameters = parameters
+        let dateString = DateFormatter.shared.string(from: Date())
+        parameters.append(URLQueryItem(name: "date", value: dateString))
         components.queryItems = parameters
+
         guard let url = components.url else {
             return Fail(error: URLError(.badURL))
                 .asResult()

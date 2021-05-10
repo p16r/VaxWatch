@@ -50,7 +50,7 @@ struct BrowseByDistrictView: View {
             }
             .onChange(of: selectedDistrictIndex) { index in
                 if index == 0 { return }
-                centersModel.fetchCentres(for: index, on: Date())
+                centersModel.fetchCentres(for: index)
             }
             .navigationTitle("Browse By Districts")
         }
