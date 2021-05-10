@@ -36,41 +36,32 @@ struct APIClient {
         for districtID: Int,
         on date: Date
     ) -> AnyPublisher<Result<[Center], Error>, Never> {
-        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
-        guard var components = URLComponents(string: urlString) else {
-            return Fail(error: URLError(.badURL))
-                .asResult()
-        }
-        components.queryItems = [
+        let parameters = [
             URLQueryItem(name: "district_id", value: String(describing: districtID)),
             URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
         ]
-        guard let url = components.url else {
-            return Fail(error: URLError(.badURL))
-                .asResult()
-        }
-
-        return centersPublisher(for: url)
+        return centersPublisher(for: parameters)
     }
 
     func centersByPincodePublisher(for pincode: Int, on date: Date) -> AnyPublisher<Result<[Center], Error>, Never> {
+        let parameters = [
+            URLQueryItem(name: "pincode", value: String(describing: pincode)),
+            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
+        ]
+        return centersPublisher(for: parameters)
+    }
+
+    private func centersPublisher(for parameters: [URLQueryItem]) -> AnyPublisher<Result<[Center], Error>, Never> {
         let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
         guard var components = URLComponents(string: urlString) else {
             return Fail(error: URLError(.badURL))
                 .asResult()
         }
-        components.queryItems = [
-            URLQueryItem(name: "pincode", value: String(describing: pincode)),
-            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
-        ]
+        components.queryItems = parameters
         guard let url = components.url else {
             return Fail(error: URLError(.badURL))
                 .asResult()
         }
-        return centersPublisher(for: url)
-    }
-
-    private func centersPublisher(for url: URL) -> AnyPublisher<Result<[Center], Error>, Never> {
 
         struct Centers: Decodable {
 
