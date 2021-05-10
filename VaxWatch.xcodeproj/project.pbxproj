@@ -23,6 +23,7 @@
 		0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */; };
 		0570BA632647C33100BC1E4D /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA622647C33100BC1E4D /* Publisher+.swift */; };
 		0570BA682647C39200BC1E4D /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA672647C39200BC1E4D /* DateFormatter+.swift */; };
+		05DE5DC426492EC90089A0E8 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE5DC326492EC90089A0E8 /* ServerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		0570BA592647C1B700BC1E4D /* KeyedDecodingContainer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+.swift"; sourceTree = "<group>"; };
 		0570BA622647C33100BC1E4D /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
 		0570BA672647C39200BC1E4D /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
+		05DE5DC326492EC90089A0E8 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				0570BA532647C01B00BC1E4D /* AnyCodingKey.swift */,
 				0570BA432647BFD600BC1E4D /* APIClient.swift */,
+				05DE5DC326492EC90089A0E8 /* ServerError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				0570BA4B2647BFF300BC1E4D /* Session.swift in Sources */,
 				0570BA4D2647BFF300BC1E4D /* Districts.swift in Sources */,
 				0570BA5A2647C1B700BC1E4D /* KeyedDecodingContainer+.swift in Sources */,
+				05DE5DC426492EC90089A0E8 /* ServerError.swift in Sources */,
 				0570BA542647C01B00BC1E4D /* AnyCodingKey.swift in Sources */,
 				0570BA202647B3B200BC1E4D /* ContentView.swift in Sources */,
 				0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */,
