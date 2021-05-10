@@ -5,23 +5,23 @@ struct CenterListCell: View {
     let centerViewModel: CenterViewModel
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
+            HStack(alignment: .firstTextBaseline) {
                 Text(centerViewModel.name)
                     .font(.headline)
-                Text(centerViewModel.addressString)
-                    .foregroundColor(.secondary)
+                Spacer()
+                Text(centerViewModel.feeType)
+                    .font(Font.body.monospacedDigit())
+                    .fontWeight(.bold)
+                    .textCase(.uppercase)
+                    .foregroundColor(.white)
+                    .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
+                    .background(centerViewModel.feeTypeBackgroundColor)
+                    .clipShape(Capsule())
             }
-            Spacer()
-            Text(centerViewModel.feeType)
-                .font(Font.body.monospacedDigit())
-                .fontWeight(.bold)
-                .textCase(.uppercase)
-                .foregroundColor(.white)
-                .padding(.vertical, 2)
-                .padding(.horizontal, 8)
-                .background(centerViewModel.feeTypeBackgroundColor)
-                .clipShape(Capsule())
+            Text(centerViewModel.addressString)
+                .font(Font.body.leading(.tight))
+                .foregroundColor(.secondary)
         }
         .padding(.vertical, 4)
     }
