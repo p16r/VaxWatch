@@ -9,6 +9,15 @@ class CentersViewModel: ObservableObject {
     private let apiClient = APIClient()
     private var cancellables = Set<AnyCancellable>()
 
+    var centersFoundTitle: String {
+        switch centers?.count {
+            case .none: return ""
+            case .some(0): return "No Centers Found"
+            case .some(1): return "1 Center Found"
+            case .some(let count): return "\(count) Centers Found"
+        }
+    }
+
     func fetchCentres(for districtIndex: Int, on date: Date) {
         apiClient
             .centersByDistrictPublisher(for: districtIndex, on: date)
