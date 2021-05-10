@@ -2,7 +2,6 @@ import SwiftUI
 
 struct BrowseByDistrictView: View {
 
-    @State var date = Date()
     @StateObject var appModel = DistrictsViewModel()
     @StateObject var centersModel = CentersViewModel()
     @State var selectedStateIndex = 0
@@ -12,7 +11,6 @@ struct BrowseByDistrictView: View {
         NavigationView {
             Form {
                 Section(header: Text("Details")) {
-                    DatePicker("Vaccination Date", selection: $date, in: Date()..., displayedComponents: .date)
                     if appModel.states.isEmpty {
                         Button("Fetch States List", action: appModel.fetchStates)
                     } else {
@@ -47,16 +45,12 @@ struct BrowseByDistrictView: View {
                     }
                 }
             }
-            .onChange(of: date) { date in
-                if selectedDistrictIndex == 0 { return }
-                centersModel.fetchCentres(for: selectedDistrictIndex, on: date)
-            }
             .onChange(of: selectedStateIndex) { index in
                 appModel.fetchDistricts(for: index)
             }
             .onChange(of: selectedDistrictIndex) { index in
                 if index == 0 { return }
-                centersModel.fetchCentres(for: index, on: date)
+                centersModel.fetchCentres(for: index, on: Date())
             }
             .navigationTitle("Browse By Districts")
         }
