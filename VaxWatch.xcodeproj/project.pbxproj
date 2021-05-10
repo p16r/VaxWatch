@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05250C302648422F00F7E4BE /* CentersViewModel.swift */; };
 		0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */; };
 		0570BA222647B3B400BC1E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA212647B3B400BC1E4D /* Assets.xcassets */; };
 		0570BA252647B3B400BC1E4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA242647B3B400BC1E4D /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05250C302648422F00F7E4BE /* CentersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersViewModel.swift; sourceTree = "<group>"; };
 		0570BA1A2647B3B200BC1E4D /* VaxWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaxWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxWatchApp.swift; sourceTree = "<group>"; };
 		0570BA212647B3B400BC1E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
+				05250C302648422F00F7E4BE /* CentersViewModel.swift */,
 				0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */,
 				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
 			);
@@ -256,6 +259,7 @@
 				0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */,
 				0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */,
 				0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */,
+				05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */,
 				0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */,
 				0570BA4A2647BFF300BC1E4D /* States.swift in Sources */,
 			);
