@@ -27,6 +27,7 @@
 		0570BA682647C39200BC1E4D /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA672647C39200BC1E4D /* DateFormatter+.swift */; };
 		0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */; };
 		05DE5DC426492EC90089A0E8 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE5DC326492EC90089A0E8 /* ServerError.swift */; };
+		05DE5DCB2649477F0089A0E8 /* CenterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE5DCA2649477F0089A0E8 /* CenterListCell.swift */; };
 		05DE5DD226494B000089A0E8 /* CenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE5DD126494B000089A0E8 /* CenterViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		0570BA672647C39200BC1E4D /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsViewModel.swift; sourceTree = "<group>"; };
 		05DE5DC326492EC90089A0E8 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		05DE5DCA2649477F0089A0E8 /* CenterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListCell.swift; sourceTree = "<group>"; };
 		05DE5DD126494B000089A0E8 /* CenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
+				05DE5DCA2649477F0089A0E8 /* CenterListCell.swift */,
 				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
 			);
 			path = Views;
@@ -271,6 +274,7 @@
 				0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */,
 				0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */,
 				0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */,
+				05DE5DCB2649477F0089A0E8 /* CenterListCell.swift in Sources */,
 				05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */,
 				0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */,
 				0570BA4A2647BFF300BC1E4D /* States.swift in Sources */,
