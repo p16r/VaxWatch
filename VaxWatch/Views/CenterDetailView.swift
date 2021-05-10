@@ -12,6 +12,42 @@ struct CenterDetailView: View {
                 Text(centerViewModel.addressString)
                     .font(Font.body.leading(.tight))
             }
+            Section(header: Text("Charges")) {
+                if let fees = centerViewModel.fees?.sorted(by: { $0.key < $1.key }) {
+                    ForEach(fees, id: \.key) { fee in
+                        HStack {
+                            Text(fee.key)
+                            Spacer()
+                            NumberFormatter.shared.string(from: fee.value as NSNumber)
+                                .map {
+                                    Text(verbatim: $0)
+                                        .font(Font.body.monospacedDigit())
+                                        .fontWeight(.bold)
+                                        .textCase(.uppercase)
+                                        .foregroundColor(.white)
+                                        .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
+                                        .background(centerViewModel.feeTypeBackgroundColor)
+                                        .clipShape(Capsule())
+                                }
+                        }
+                    }
+                } else {
+                    ForEach(Set(centerViewModel.sessions.map(\.vaccine)).sorted(), id: \.self) { vaccine in
+                        HStack {
+                            Text(vaccine)
+                            Spacer()
+                            Text(centerViewModel.feeType)
+                                .font(Font.body.monospacedDigit())
+                                .fontWeight(.bold)
+                                .textCase(.uppercase)
+                                .foregroundColor(.white)
+                                .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
+                                .background(centerViewModel.feeTypeBackgroundColor)
+                                .clipShape(Capsule())
+                        }
+                    }
+                }
+            }
             let sessions = Dictionary(grouping: centerViewModel.sessions, by: \.date)
                 .sorted { $0.key < $1.key }
             ForEach(sessions, id: \.key) { sessionGroup in
