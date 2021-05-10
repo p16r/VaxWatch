@@ -36,41 +36,32 @@ struct APIClient {
         for districtID: Int,
         on date: Date
     ) -> AnyPublisher<Result<[Center], Error>, Never> {
-        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict"
-        guard var components = URLComponents(string: urlString) else {
-            return Fail(error: URLError(.badURL))
-                .asResult()
-        }
-        components.queryItems = [
+        let parameters = [
             URLQueryItem(name: "district_id", value: String(describing: districtID)),
             URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
         ]
-        guard let url = components.url else {
-            return Fail(error: URLError(.badURL))
-                .asResult()
-        }
-
-        return centersPublisher(for: url)
+        return centersPublisher(for: parameters)
     }
 
     func centersByPincodePublisher(for pincode: Int, on date: Date) -> AnyPublisher<Result<[Center], Error>, Never> {
-        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict"
+        let parameters = [
+            URLQueryItem(name: "pincode", value: String(describing: pincode)),
+            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
+        ]
+        return centersPublisher(for: parameters)
+    }
+
+    private func centersPublisher(for parameters: [URLQueryItem]) -> AnyPublisher<Result<[Center], Error>, Never> {
+        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
         guard var components = URLComponents(string: urlString) else {
             return Fail(error: URLError(.badURL))
                 .asResult()
         }
-        components.queryItems = [
-            URLQueryItem(name: "pincode", value: String(describing: pincode)),
-            URLQueryItem(name: "date", value: DateFormatter.shared.string(from: date))
-        ]
+        components.queryItems = parameters
         guard let url = components.url else {
             return Fail(error: URLError(.badURL))
                 .asResult()
         }
-        return centersPublisher(for: url)
-    }
-
-    private func centersPublisher(for url: URL) -> AnyPublisher<Result<[Center], Error>, Never> {
 
         struct Centers: Decodable {
 
@@ -80,8 +71,26 @@ struct APIClient {
 
         return URLSession.shared
             .dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: Centers.self, decoder: JSONDecoder())
+            .mapError { $0 as Error }
+            .flatMap { (data, response) -> AnyPublisher<Centers, Error> in
+                switch (response as? HTTPURLResponse)?.statusCode {
+                    case 401:
+                        return String(data: data, encoding: .utf8)
+                            .publisher
+                            .map { ServerError(error: $0) }
+                            .flatMap(Fail<Centers, Error>.init)
+                            .eraseToAnyPublisher()
+                    case 400:
+                        return Just(data)
+                            .decode(type: ServerError.self, decoder: JSONDecoder())
+                            .flatMap(Fail<Centers, Error>.init)
+                            .eraseToAnyPublisher()
+                    default:
+                        return Just(data)
+                            .decode(type: Centers.self, decoder: JSONDecoder())
+                            .eraseToAnyPublisher()
+                }
+            }
             .map(\.centers)
             .asResult()
     }
