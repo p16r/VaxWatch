@@ -10,14 +10,11 @@ struct CenterListCell: View {
                 Text(centerViewModel.name)
                     .font(.headline)
                 Spacer()
-                Text(centerViewModel.feeType)
-                    .font(Font.body.monospacedDigit())
-                    .fontWeight(.bold)
-                    .textCase(.uppercase)
-                    .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
-                    .background(centerViewModel.feeTypeBackgroundColor)
-                    .clipShape(Capsule())
+                Badge(
+                    text: centerViewModel.feeType,
+                    foregroundColor: .white,
+                    backgroundColor: centerViewModel.feeTypeBackgroundColor
+                )
             }
             Text(centerViewModel.addressString)
                 .font(Font.body.leading(.tight))

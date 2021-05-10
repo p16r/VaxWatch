@@ -20,14 +20,11 @@ struct CenterDetailView: View {
                             Spacer()
                             NumberFormatter.shared.string(from: fee.value as NSNumber)
                                 .map {
-                                    Text(verbatim: $0)
-                                        .font(Font.body.monospacedDigit())
-                                        .fontWeight(.bold)
-                                        .textCase(.uppercase)
-                                        .foregroundColor(.white)
-                                        .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
-                                        .background(centerViewModel.feeTypeBackgroundColor)
-                                        .clipShape(Capsule())
+                                    Badge(
+                                        text: $0,
+                                        foregroundColor: .white,
+                                        backgroundColor: centerViewModel.feeTypeBackgroundColor
+                                    )
                                 }
                         }
                     }
@@ -36,14 +33,11 @@ struct CenterDetailView: View {
                         HStack {
                             Text(vaccine)
                             Spacer()
-                            Text(centerViewModel.feeType)
-                                .font(Font.body.monospacedDigit())
-                                .fontWeight(.bold)
-                                .textCase(.uppercase)
-                                .foregroundColor(.white)
-                                .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
-                                .background(centerViewModel.feeTypeBackgroundColor)
-                                .clipShape(Capsule())
+                            Badge(
+                                text: centerViewModel.feeType,
+                                foregroundColor: .white,
+                                backgroundColor: centerViewModel.feeTypeBackgroundColor
+                            )
                         }
                     }
                 }

@@ -20,14 +20,11 @@ struct SessionListCell: View {
             }
             .padding(.vertical, 4)
             Spacer()
-            Text(String(describing: sessionViewModel.capacity))
-                .font(Font.body.monospacedDigit())
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .padding(.vertical, 2)
-                .padding(.horizontal, 8)
-                .background(sessionViewModel.capacityBackgroundColor)
-                .clipShape(Capsule())
+            Badge(
+                text: String(describing: sessionViewModel.capacity),
+                foregroundColor: .white,
+                backgroundColor: sessionViewModel.capacityBackgroundColor
+            )
         }
     }
 
