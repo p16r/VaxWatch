@@ -39,7 +39,10 @@ struct BrowseByDistrictView: View {
                 if let centers = centersModel.centers {
                     Section(header: Text(centersModel.centersFoundTitle)) {
                         ForEach(centers) { center in
-                            CenterListCell(centerViewModel: CenterViewModel(center: center))
+                            let viewModel = CenterViewModel(center: center)
+                            NavigationLink(destination: CenterDetailView(centerViewModel: viewModel)) {
+                                CenterListCell(centerViewModel: viewModel)
+                            }
                         }
                     }
                 }
