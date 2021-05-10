@@ -71,8 +71,26 @@ struct APIClient {
 
         return URLSession.shared
             .dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: Centers.self, decoder: JSONDecoder())
+            .mapError { $0 as Error }
+            .flatMap { (data, response) -> AnyPublisher<Centers, Error> in
+                switch (response as? HTTPURLResponse)?.statusCode {
+                    case 401:
+                        return String(data: data, encoding: .utf8)
+                            .publisher
+                            .map { ServerError(error: $0) }
+                            .flatMap(Fail<Centers, Error>.init)
+                            .eraseToAnyPublisher()
+                    case 400:
+                        return Just(data)
+                            .decode(type: ServerError.self, decoder: JSONDecoder())
+                            .flatMap(Fail<Centers, Error>.init)
+                            .eraseToAnyPublisher()
+                    default:
+                        return Just(data)
+                            .decode(type: Centers.self, decoder: JSONDecoder())
+                            .eraseToAnyPublisher()
+                }
+            }
             .map(\.centers)
             .asResult()
     }
