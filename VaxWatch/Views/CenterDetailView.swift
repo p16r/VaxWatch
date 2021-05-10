@@ -8,7 +8,9 @@ struct CenterDetailView: View {
         Form {
             Section(header: Text("Details")) {
                 Text(centerViewModel.name)
+                    .font(Font.body.leading(.tight))
                 Text(centerViewModel.addressString)
+                    .font(Font.body.leading(.tight))
             }
             let sessions = Dictionary(grouping: centerViewModel.sessions, by: \.date)
                 .sorted { $0.key < $1.key }
