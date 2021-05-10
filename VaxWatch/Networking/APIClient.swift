@@ -36,7 +36,7 @@ struct APIClient {
         for districtID: Int,
         on date: Date
     ) -> AnyPublisher<Result<[Center], Error>, Never> {
-        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict"
+        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
         guard var components = URLComponents(string: urlString) else {
             return Fail(error: URLError(.badURL))
                 .asResult()
@@ -54,7 +54,7 @@ struct APIClient {
     }
 
     func centersByPincodePublisher(for pincode: Int, on date: Date) -> AnyPublisher<Result<[Center], Error>, Never> {
-        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict"
+        let urlString = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
         guard var components = URLComponents(string: urlString) else {
             return Fail(error: URLError(.badURL))
                 .asResult()
