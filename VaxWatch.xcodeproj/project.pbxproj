@@ -91,6 +91,7 @@
 				0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */,
 				0570BA262647B3B400BC1E4D /* Info.plist */,
 				0570BA332647B48C00BC1E4D /* Views */,
+				05DE5DCD264947980089A0E8 /* ViewModels */,
 				0570BA4F2647BFFF00BC1E4D /* Models */,
 				0570BA512647C00900BC1E4D /* Networking */,
 				0570BA5E2647C1CF00BC1E4D /* Extensions */,
@@ -112,8 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
-				05250C302648422F00F7E4BE /* CentersViewModel.swift */,
-				0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */,
 				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
 			);
 			path = Views;
@@ -173,6 +172,15 @@
 				0570BA622647C33100BC1E4D /* Publisher+.swift */,
 			);
 			path = "Combine+";
+			sourceTree = "<group>";
+		};
+		05DE5DCD264947980089A0E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				05250C302648422F00F7E4BE /* CentersViewModel.swift */,
+				0570BA6F2647E17000BC1E4D /* DistrictsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
