@@ -38,7 +38,8 @@ struct CenterListView_Previews: PreviewProvider {
         district: "AASDAD",
         pincode: 400023,
         feeType: "Paid",
-        sessions: []
+        sessions: [],
+        fees: nil
     )
 
     static var previews: some View {

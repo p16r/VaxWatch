@@ -53,6 +53,9 @@ struct CenterDetailView_Previews: PreviewProvider {
                 ageLimit: 45,
                 vaccine: "Covaxin"
             ),
+        ],
+        fees: [
+            "COVISHIELD": 700,
         ]
     )
 
