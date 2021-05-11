@@ -2,8 +2,20 @@ import SwiftUI
 
 struct BrowseByPincodeView: View {
 
+    @State var pincodeString: String = ""
+
     var body: some View {
-        Text("Pincode")
+        NavigationView {
+            Form {
+                Section(header: Text("Pincode")) {
+                    TextField("110001", text: $pincodeString, onCommit: {
+                        print(pincodeString)
+                    })
+                    .keyboardType(.numbersAndPunctuation)
+                }
+            }
+            .navigationTitle("Browse By Pincode")
+        }
     }
 
 }
