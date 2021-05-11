@@ -17,8 +17,11 @@ struct BrowseByPincodeView: View {
                     header: Text("Pincode"),
                     footer: pincodeMessage.map { Text($0).foregroundColor(.red) }
                 ) {
-                    TextField("110001", text: $pincodeString, onCommit: fetchCenters)
-                        .keyboardType(.numbersAndPunctuation)
+                    HStack {
+                        TextField("110001", text: $pincodeString, onCommit: fetchCenters)
+                            .keyboardType(.numbersAndPunctuation)
+                        Button("Search", action: fetchCenters)
+                    }
                 }
                 if let centers = centersViewModel.centers {
                     Section(header: Text(centersViewModel.centersFoundTitle)) {
