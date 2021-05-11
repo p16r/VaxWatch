@@ -25,6 +25,16 @@ struct BrowseByPincodeView: View {
                     })
                     .keyboardType(.numbersAndPunctuation)
                 }
+                if let centers = centersViewModel.centers {
+                    Section(header: Text(centersViewModel.centersFoundTitle)) {
+                        ForEach(centers) { center in
+                            let viewModel = CenterViewModel(center: center)
+                            NavigationLink(destination: CenterDetailView(centerViewModel: viewModel)) {
+                                CenterListCell(centerViewModel: viewModel)
+                            }
+                        }
+                    }
+                }
             }
             .navigationTitle("Browse By Pincode")
         }
