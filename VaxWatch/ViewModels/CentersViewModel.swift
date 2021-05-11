@@ -34,4 +34,20 @@ class CentersViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    func fetchCentres(in pincode: Int) {
+        apiClient
+            .centersByPincodePublisher(for: pincode)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                    case .success(let centers):
+                        self?.centers = centers
+                    case .failure(let error):
+                        self?.centers = nil
+                        self?.errorMessage = "\(error.localizedDescription)\nPlease try again later."
+                }
+            }
+            .store(in: &cancellables)
+    }
+
 }
