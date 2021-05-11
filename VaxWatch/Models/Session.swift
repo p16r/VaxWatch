@@ -16,7 +16,8 @@ extension Session: Decodable {
         let container = try decoder.container(keyedBy: AnyCodingKey.self)
         self.id = try container.decode("session_id")
         self.date = try container.decode("date")
-        self.capacity = try container.decode("available_capacity")
+        let capacity: Double = try container.decode("available_capacity")
+        self.capacity = Int((capacity).rounded(.toNearestOrAwayFromZero))
         self.ageLimit = try container.decode("min_age_limit")
         self.vaccine = try container.decode("vaccine")
     }
