@@ -17,13 +17,8 @@ struct BrowseByPincodeView: View {
                     header: Text("Pincode"),
                     footer: pincodeMessage.map { Text($0).foregroundColor(.red) }
                 ) {
-                    TextField("110001", text: $pincodeString, onCommit: {
-                        if pincodeString.count != 6 { return pincodeMessage = "Pincode must be 6 digits long only." }
-                        guard let pincode = pincode else { return pincodeMessage = "Pincode can only contain numbers." }
-                        pincodeMessage = nil
-                        centersViewModel.fetchCentres(in: pincode)
-                    })
-                    .keyboardType(.numbersAndPunctuation)
+                    TextField("110001", text: $pincodeString, onCommit: fetchCenters)
+                        .keyboardType(.numbersAndPunctuation)
                 }
                 if let centers = centersViewModel.centers {
                     Section(header: Text(centersViewModel.centersFoundTitle)) {
@@ -38,6 +33,14 @@ struct BrowseByPincodeView: View {
             }
             .navigationTitle("Browse By Pincode")
         }
+    }
+
+    private func fetchCenters() {
+        if pincodeString.count != 6 { return pincodeMessage = "Pincode must be 6 digits long only." }
+        guard let pincode = pincode else { return pincodeMessage = "Pincode can only contain numbers." }
+        pincodeMessage = nil
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        centersViewModel.fetchCentres(in: pincode)
     }
 
 }
