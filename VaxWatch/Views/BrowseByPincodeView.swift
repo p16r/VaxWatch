@@ -19,9 +19,9 @@ struct BrowseByPincodeView: View {
                 ) {
                     TextField("110001", text: $pincodeString, onCommit: {
                         if pincodeString.count != 6 { return pincodeMessage = "Pincode must be 6 digits long only." }
-                        if pincode == nil { return pincodeMessage = "Pincode can only contain numbers." }
+                        guard let pincode = pincode else { return pincodeMessage = "Pincode can only contain numbers." }
                         pincodeMessage = nil
-                        print(pincodeString)
+                        centersViewModel.fetchCentres(in: pincode)
                     })
                     .keyboardType(.numbersAndPunctuation)
                 }
