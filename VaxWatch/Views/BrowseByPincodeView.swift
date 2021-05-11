@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BrowseByPincodeView: View {
 
+    @StateObject var centersViewModel = CentersViewModel()
     @State var pincodeString: String = ""
     @State var pincodeMessage: String? = nil
 
