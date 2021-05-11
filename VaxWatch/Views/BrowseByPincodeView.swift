@@ -19,7 +19,7 @@ struct BrowseByPincodeView: View {
                 ) {
                     HStack {
                         TextField("110001", text: $pincodeString, onCommit: fetchCenters)
-                            .keyboardType(.numbersAndPunctuation)
+                            .keyboardType(.numberPad)
                         Button("Search", action: fetchCenters)
                     }
                 }
