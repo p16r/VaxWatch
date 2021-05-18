@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0547E1DA2654060700DD3E9D /* PRIVACY.md in Resources */ = {isa = PBXBuildFile; fileRef = 0547E1D92654060700DD3E9D /* PRIVACY.md */; };
 		0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */; };
 		0570BA202647B3B200BC1E4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA1F2647B3B200BC1E4D /* ContentView.swift */; };
 		0570BA222647B3B400BC1E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA212647B3B400BC1E4D /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0547E1D92654060700DD3E9D /* PRIVACY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		0570BA1A2647B3B200BC1E4D /* VaxWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaxWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxWatchApp.swift; sourceTree = "<group>"; };
 		0570BA1F2647B3B200BC1E4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				0570BA2D2647B42200BC1E4D /* LICENSE */,
+				0547E1D92654060700DD3E9D /* PRIVACY.md */,
 				0570BA392647B55C00BC1E4D /* README.md */,
 				0570BA1C2647B3B200BC1E4D /* VaxWatch */,
 				0570BA1B2647B3B200BC1E4D /* Products */,
@@ -228,6 +231,7 @@
 				0570BA2F2647B42200BC1E4D /* LICENSE in Resources */,
 				0570BA252647B3B400BC1E4D /* Preview Assets.xcassets in Resources */,
 				0570BA222647B3B400BC1E4D /* Assets.xcassets in Resources */,
+				0547E1DA2654060700DD3E9D /* PRIVACY.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
