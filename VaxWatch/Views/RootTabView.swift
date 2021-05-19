@@ -6,6 +6,8 @@ struct RootTabView: View {
         TabView {
             BrowseByDistrictView()
                 .tabItem { Label("District", systemImage: "map") }
+            BrowseByPincodeView()
+                .tabItem { Label("Pincode", systemImage: "mappin.and.ellipse") }
         }
     }
 

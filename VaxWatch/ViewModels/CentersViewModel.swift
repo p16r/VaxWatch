@@ -19,6 +19,7 @@ class CentersViewModel: ObservableObject {
     }
 
     func fetchCentres(for districtIndex: Int) {
+        centers = nil
         apiClient
             .centersByDistrictPublisher(for: districtIndex)
             .receive(on: DispatchQueue.main)
@@ -27,7 +28,22 @@ class CentersViewModel: ObservableObject {
                     case .success(let centers):
                         self?.centers = centers
                     case .failure(let error):
-                        self?.centers = nil
+                        self?.errorMessage = "\(error.localizedDescription)\nPlease try again later."
+                }
+            }
+            .store(in: &cancellables)
+    }
+
+    func fetchCentres(in pincode: Int) {
+        centers = nil
+        apiClient
+            .centersByPincodePublisher(for: pincode)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                    case .success(let centers):
+                        self?.centers = centers
+                    case .failure(let error):
                         self?.errorMessage = "\(error.localizedDescription)\nPlease try again later."
                 }
             }

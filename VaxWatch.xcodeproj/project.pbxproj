@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05250C302648422F00F7E4BE /* CentersViewModel.swift */; };
+		052B290E264A4F080015D143 /* BrowseByPincodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B290D264A4F080015D143 /* BrowseByPincodeView.swift */; };
 		0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */; };
 		0570BA222647B3B400BC1E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA212647B3B400BC1E4D /* Assets.xcassets */; };
 		0570BA252647B3B400BC1E4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA242647B3B400BC1E4D /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		05250C302648422F00F7E4BE /* CentersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersViewModel.swift; sourceTree = "<group>"; };
+		052B290D264A4F080015D143 /* BrowseByPincodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseByPincodeView.swift; sourceTree = "<group>"; };
 		0570BA1A2647B3B200BC1E4D /* VaxWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaxWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxWatchApp.swift; sourceTree = "<group>"; };
 		0570BA212647B3B400BC1E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				05A346A62649B7EB00D4A36F /* Badge.swift */,
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
+				052B290D264A4F080015D143 /* BrowseByPincodeView.swift */,
 				05F43702264956D20019BA41 /* CenterDetailView.swift */,
 				05DE5DCA2649477F0089A0E8 /* CenterListCell.swift */,
 				0570BA3B2647BC5800BC1E4D /* RootTabView.swift */,
@@ -295,6 +298,7 @@
 				0570BA442647BFD600BC1E4D /* APIClient.swift in Sources */,
 				05AE35C926497D2700E42CF5 /* SessionListCell.swift in Sources */,
 				05DE5DCB2649477F0089A0E8 /* CenterListCell.swift in Sources */,
+				052B290E264A4F080015D143 /* BrowseByPincodeView.swift in Sources */,
 				05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */,
 				0570BA4C2647BFF300BC1E4D /* Center.swift in Sources */,
 				0570BA4A2647BFF300BC1E4D /* States.swift in Sources */,
