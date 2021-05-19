@@ -40,6 +40,7 @@ struct AboutView: View {
             }
             .navigationTitle("About VaxWatch")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
 }
