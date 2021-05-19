@@ -1,8 +1,8 @@
 #   VaxWatch Privacy Policy
 
 This privacy policy covers your usage of the iOS app VaxWatch built and
-published using this project only. This policy does not cover any forked
-versions of this project.
+published using [this project][this-project] only. This policy does not cover
+any forked versions of this project.
 
 ##  Information Collection
 
@@ -42,6 +42,7 @@ or [email][email].
 
 [//]: # (Links)
 
+[this-project]: https://github.com/prtmshk/VaxWatch
 [api-setu-privacy]: https://apisetu.gov.in/privacy_policy.php
 [github-privacy]: https://docs.github.com/en/github/site-policy/github-privacy-statement
 [twitter]: https://twitter.com/prtmshk
