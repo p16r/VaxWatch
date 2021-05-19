@@ -10,6 +10,7 @@ struct Center: Identifiable, Hashable {
     let pincode: Int
     let feeType: String
     let sessions: [Session]
+    let fees: [String: Int]?
 
 }
 
@@ -25,6 +26,18 @@ extension Center: Decodable {
         self.pincode = try container.decode("pincode")
         self.feeType = try container.decode("fee_type")
         self.sessions = try container.decode("sessions")
+
+        struct VaccineFee: Decodable {
+
+            let vaccine: String
+            let fee: String
+
+        }
+
+        self.fees = try container.decode(ifPresent: "vaccine_fees", as: [VaccineFee].self)?
+            .reduce(into: [:]) { (dictionary, vaccineFee) in
+                dictionary[vaccineFee.vaccine] = Double(vaccineFee.fee).map(Int.init)
+            }
     }
 
 }
