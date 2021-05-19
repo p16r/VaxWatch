@@ -36,6 +36,7 @@ struct BrowseByPincodeView: View {
             }
             .navigationTitle("Browse By Pincode")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     private func fetchCenters() {
