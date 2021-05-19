@@ -8,6 +8,8 @@ struct RootTabView: View {
                 .tabItem { Label("District", systemImage: "map") }
             BrowseByPincodeView()
                 .tabItem { Label("Pincode", systemImage: "mappin.and.ellipse") }
+            AboutView()
+                .tabItem { Label("About", systemImage: "info.circle") }
         }
     }
 

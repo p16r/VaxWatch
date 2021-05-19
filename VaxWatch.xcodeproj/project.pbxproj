@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05250C312648422F00F7E4BE /* CentersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05250C302648422F00F7E4BE /* CentersViewModel.swift */; };
 		052B290E264A4F080015D143 /* BrowseByPincodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B290D264A4F080015D143 /* BrowseByPincodeView.swift */; };
+		0547E1E22654F69500DD3E9D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547E1E12654F69500DD3E9D /* AboutView.swift */; };
 		0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */; };
 		0570BA222647B3B400BC1E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA212647B3B400BC1E4D /* Assets.xcassets */; };
 		0570BA252647B3B400BC1E4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570BA242647B3B400BC1E4D /* Preview Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		05250C302648422F00F7E4BE /* CentersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersViewModel.swift; sourceTree = "<group>"; };
 		052B290D264A4F080015D143 /* BrowseByPincodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseByPincodeView.swift; sourceTree = "<group>"; };
+		0547E1E12654F69500DD3E9D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0570BA1A2647B3B200BC1E4D /* VaxWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaxWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0570BA1D2647B3B200BC1E4D /* VaxWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaxWatchApp.swift; sourceTree = "<group>"; };
 		0570BA212647B3B400BC1E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		0570BA332647B48C00BC1E4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0547E1E12654F69500DD3E9D /* AboutView.swift */,
 				05A346A62649B7EB00D4A36F /* Badge.swift */,
 				0570BA3E2647BEC800BC1E4D /* BrowseByDistrictView.swift */,
 				052B290D264A4F080015D143 /* BrowseByPincodeView.swift */,
@@ -292,6 +295,7 @@
 				0570BA542647C01B00BC1E4D /* AnyCodingKey.swift in Sources */,
 				0570BA3C2647BC5800BC1E4D /* RootTabView.swift in Sources */,
 				0570BA1E2647B3B200BC1E4D /* VaxWatchApp.swift in Sources */,
+				0547E1E22654F69500DD3E9D /* AboutView.swift in Sources */,
 				05A346A72649B7EB00D4A36F /* Badge.swift in Sources */,
 				0570BA702647E17000BC1E4D /* DistrictsViewModel.swift in Sources */,
 				0570BA3F2647BEC800BC1E4D /* BrowseByDistrictView.swift in Sources */,
