@@ -73,6 +73,7 @@ struct BrowseByDistrictView: View {
             )
         }
         .onAppear(perform: appModel.fetchStates)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
 }
